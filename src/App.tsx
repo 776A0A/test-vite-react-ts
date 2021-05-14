@@ -1,12 +1,9 @@
-import { useState } from 'react'
-import logo from './logo.svg'
 import './App.css'
 import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom'
 import { About, Home, Users } from 'views'
+import { Topics } from 'views/topics'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <div className='App'>
       <Router>
@@ -22,6 +19,9 @@ function App() {
               <li>
                 <Link to='/users'>Users</Link>
               </li>
+              <li>
+                <Link to='/topics'>Topics</Link>
+              </li>
             </ul>
           </nav>
         </div>
@@ -32,6 +32,9 @@ function App() {
           </Route>
           <Route path='/users'>
             <Users />
+          </Route>
+          <Route path='/topics'>
+            <Topics />
           </Route>
           <Route path='/'>
             <Home />
