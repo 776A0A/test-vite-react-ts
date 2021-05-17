@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom'
 import { About, Home, Users } from 'views'
 import { Topics } from 'views/topics'
 import { AuthExample } from 'views/auth'
+import { ModalGallery } from 'views/modal-gallery'
 
 function App() {
   return (
@@ -27,7 +28,7 @@ function App() {
           </nav>
         </div>
 
-        <Switch>
+        {/* <Switch>
           <Route path='/about'>
             <About />
           </Route>
@@ -40,10 +41,11 @@ function App() {
           <Route path='/'>
             <Home />
           </Route>
-        </Switch>
-      </Router>
+        </Switch> */}
 
-      <AuthExample />
+        <AuthExample />
+        <ModalGallery />
+      </Router>
     </div>
   )
 }

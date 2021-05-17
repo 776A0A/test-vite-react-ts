@@ -1,5 +1,5 @@
 import { PropsWithChildren } from 'react'
-import { Redirect, Route } from 'react-router'
+import { Redirect, Route } from 'react-router-dom'
 import { useAuth } from './useAuth'
 
 export const PrivateRoute = ({

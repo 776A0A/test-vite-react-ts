@@ -1,4 +1,4 @@
-import { useHistory, useLocation } from 'react-router'
+import { useHistory, useLocation } from 'react-router-dom'
 import { useAuth } from './useAuth'
 
 export const LoginPage = () => {
