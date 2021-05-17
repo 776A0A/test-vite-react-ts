@@ -16,11 +16,9 @@ const fakeAuth = {
   },
 }
 
-type AuthContext = Partial<ReturnType<typeof useProvideAuth>>
+type AuthContext = ReturnType<typeof useProvideAuth> | null
 
-const initialValue: AuthContext = {}
-
-export const authContext = createContext<AuthContext>(initialValue)
+export const authContext = createContext<AuthContext>(null)
 
 export const useAuth = () => useContext(authContext)
 
