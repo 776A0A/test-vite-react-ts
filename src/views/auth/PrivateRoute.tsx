@@ -1,26 +1,24 @@
 import { PropsWithChildren } from 'react'
-import { Redirect, Route } from 'react-router-dom'
+import { Redirect, Route, RouteProps } from 'react-router'
 import { useAuth } from './useAuth'
 
 export const PrivateRoute = ({
   children,
   ...rest
-}: PropsWithChildren<{
-  [key: string]: any
-}>) => {
+}: PropsWithChildren<RouteProps>) => {
   const auth = useAuth()
 
   return (
     <Route
       {...rest}
       render={({ location }) =>
-        auth.user ? (
+        auth?.user ? (
           children
         ) : (
           <Redirect
             to={{
               pathname: 'login',
-              state: { from: location },
+              state: { from: location }, // TIP 传入当前路由，用于登陆后跳回
             }}
           />
         )

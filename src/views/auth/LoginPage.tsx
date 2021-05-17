@@ -3,14 +3,14 @@ import { useAuth } from './useAuth'
 
 export const LoginPage = () => {
   const history = useHistory()
-  const location = useLocation<{ from: { pathname: string } } | undefined>()
+  const location = useLocation<{ from: Location } | undefined>()
   const auth = useAuth()
 
-  const { from } = location.state || { from: { pathname: '/' } }
+  const { from } = location.state || { from: { pathname: '/' } } // TIP 拿到可能存在的state
 
   const login = () => {
-    auth.signin?.(() => {
-      history.replace(from)
+    auth?.signin(() => {
+      history.replace(from) // TIP 使用replace
     })
   }
 

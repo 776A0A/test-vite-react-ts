@@ -6,22 +6,23 @@ import {
   useHistory,
 } from 'react-router-dom'
 import { LoginPage } from './LoginPage'
-import { ProvideAuth } from './ProvideAuth'
-import { PrivateRoute } from './ProviteRoute'
+import { AuthProvider } from './AuthProvider'
+import { PrivateRoute } from './PrivateRoute'
 import { useAuth } from './useAuth'
 
 const PublicPage = () => <div>Public</div>
 
 const ProtectedPage = () => <div>Protected</div>
 
+// 相当于顶部导航的右上角按钮
 const AuthButton = () => {
   const history = useHistory()
   const auth = useAuth()
 
-  return auth.user ? (
+  return auth?.user ? (
     <p>
       Welcome!
-      <button onClick={() => auth.signout?.(() => history.push('/'))}>
+      <button onClick={() => auth.signout(() => history.push('/'))}>
         Sign out
       </button>
     </p>
@@ -32,7 +33,7 @@ const AuthButton = () => {
 
 export const AuthExample = () => {
   return (
-    <ProvideAuth>
+    <AuthProvider>
       <Router>
         <div>
           <AuthButton />
@@ -53,12 +54,13 @@ export const AuthExample = () => {
             <Route path='/login'>
               <LoginPage />
             </Route>
+            {/* TIP 需要权限的路由 */}
             <PrivateRoute path='/protected'>
               <ProtectedPage />
             </PrivateRoute>
           </Switch>
         </div>
       </Router>
-    </ProvideAuth>
+    </AuthProvider>
   )
 }
