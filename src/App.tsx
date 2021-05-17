@@ -1,4 +1,4 @@
-import './App.css'
+import classes from './App.module.scss'
 import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom'
 import { About, Home, Users } from 'views'
 import { Topics } from 'views/topics'
@@ -7,7 +7,8 @@ import { ModalGallery } from 'views/modal-gallery'
 
 function App() {
   return (
-    <div className='App'>
+    <div className={classes.App}>
+      <div className={classes['App-logo']}>logo</div>
       <Router>
         <div>
           <nav>
@@ -28,7 +29,7 @@ function App() {
           </nav>
         </div>
 
-        {/* <Switch>
+        <Switch>
           <Route path='/about'>
             <About />
           </Route>
@@ -41,7 +42,7 @@ function App() {
           <Route path='/'>
             <Home />
           </Route>
-        </Switch> */}
+        </Switch>
 
         <AuthExample />
         <ModalGallery />

@@ -17,12 +17,12 @@ export const PrivateRoute = ({
         ) : (
           <Redirect
             to={{
-              pathname: 'login',
+              pathname: '/login',
               state: { from: location }, // TIP 传入当前路由，用于登陆后跳回
             }}
           />
         )
       }
-    ></Route>
+    />
   )
 }
