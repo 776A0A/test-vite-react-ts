@@ -1,20 +1,26 @@
 import alias from '@rollup/plugin-alias'
 import path from 'path'
+import fs from 'fs'
 
-// TODO 写一个自动脚本
 const rootPath = path.resolve(__dirname)
 
 export default () => {
   return alias({
-    entries: [
-      {
-        find: 'views',
-        replacement: path.resolve(rootPath, '../src/views'),
-      },
-      {
-        find: 'styles',
-        replacement: path.resolve(rootPath, '../src/styles'),
-      },
-    ],
+    entries: [...generateAlias()],
   })
+}
+
+function generateAlias() {
+  const items = fs.readdirSync(path.resolve(rootPath, '../src'), {
+    withFileTypes: true,
+  })
+
+  const folders = items
+    .filter((item) => item.isDirectory())
+    .map((item) => item.name)
+
+  return folders.map((folderName) => ({
+    find: folderName,
+    replacement: path.resolve(rootPath, `../src/${folderName}`),
+  }))
 }
