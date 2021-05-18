@@ -4,10 +4,23 @@ import { About, Home, Users } from 'views'
 import { Topics } from 'views/topics'
 import { AuthExample } from 'views/auth'
 import { ModalGallery } from 'views/modal-gallery'
+import { MouseEventHandler } from 'react'
+import { setTheme, currentTheme } from 'styles/themes'
 
 function App() {
+  setTheme('default', true)
+
+  const onThemeChange: MouseEventHandler = () => {
+    if (currentTheme === 'default') setTheme('blue')
+    else setTheme('default')
+  }
+
   return (
-    <div className={classes.App}>
+    <div
+      className={`${classes.App} transition-colors theme-text-color theme-bg-color transition-duration-300`}
+      data-name='xxx'
+    >
+      <button onClick={onThemeChange}>更换主题</button>
       <div className={classes['App-logo']}>logo</div>
       <Router>
         <div>
