@@ -1,6 +1,6 @@
 import { defineConfig } from 'vite'
 import reactRefresh from '@vitejs/plugin-react-refresh'
-import aliasPlugin from './config/alias'
+import aliasPlugin from './_vite-config/alias'
 
 // https://vitejs.dev/config/
 export default defineConfig({
