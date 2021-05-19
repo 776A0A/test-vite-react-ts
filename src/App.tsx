@@ -22,6 +22,11 @@ function App() {
     >
       <button onClick={onThemeChange}>更换主题</button>
       <div className={classes['App-logo']}>logo</div>
+      <div className={`aspect-w-9 aspect-h-9`}>
+        <p>
+          文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章
+        </p>
+      </div>
       <Router>
         <div>
           <nav>

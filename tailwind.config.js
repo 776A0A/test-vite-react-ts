@@ -14,5 +14,11 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [addBase(), addUtilities(), addComponents()],
+  plugins: [
+    addBase(),
+    addUtilities(),
+    addComponents(),
+    require('@tailwindcss/line-clamp'),
+    require('@tailwindcss/aspect-ratio'),
+  ],
 }
