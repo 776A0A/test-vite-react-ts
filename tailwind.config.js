@@ -1,25 +1,9 @@
-const plugin = require('tailwindcss/plugin')
-const {
-  addUtilities,
-  addComponents,
-  addBase,
-} = require('./_tailwind-config/plugins')
-
 module.exports = {
-  purge: ['./src/**/*.{js,jsx,ts,tsx}', './index.html'],
-  darkMode: false,
+  presets: [require('./_tailwind-config')],
   theme: {
     extend: {},
   },
   variants: {
     extend: {},
   },
-  plugins: [
-    addBase(),
-    addUtilities(),
-    addComponents(),
-    require('@tailwindcss/line-clamp'),
-    require('@tailwindcss/aspect-ratio'),
-  ],
-  mode: 'jit',
 }
