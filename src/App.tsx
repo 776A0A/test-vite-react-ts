@@ -21,9 +21,9 @@ function App() {
       data-name='xxx'
     >
       <button onClick={onThemeChange}>更换主题</button>
-      <div className={classes['App-logo']}>logo</div>
+      <div className={`${classes['App-logo']} relative top-[100px]`}>logo</div>
       <Router>
-        <div>
+        <div className={`relative top-[100px]`}>
           <nav>
             <ul>
               <li>

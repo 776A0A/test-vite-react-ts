@@ -15,4 +15,5 @@ module.exports = {
     extend: {},
   },
   plugins: [addBase(), addUtilities(), addComponents()],
+  mode: 'jit',
 }
