@@ -22,5 +22,4 @@ module.exports = {
     require('@tailwindcss/aspect-ratio'),
   ],
   mode: 'jit',
-  ef50ca9a1484b7b422a435bf5d4cc140c685141,
 }
