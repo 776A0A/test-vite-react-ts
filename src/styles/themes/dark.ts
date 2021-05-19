@@ -1,6 +1,6 @@
 import { Themes } from './types'
 
-export const blueTheme: Themes = {
+export const darkTheme: Themes = {
   '--theme-text-color': 'white',
-  '--theme-bg-color': 'blue',
+  '--theme-bg-color': '#555',
 }

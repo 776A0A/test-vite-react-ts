@@ -11,7 +11,7 @@ function App() {
   setTheme('default', true)
 
   const onThemeChange: MouseEventHandler = () => {
-    if (currentTheme === 'default') setTheme('blue')
+    if (currentTheme === 'default') setTheme('dark')
     else setTheme('default')
   }
 

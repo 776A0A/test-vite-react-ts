@@ -1,14 +1,14 @@
 import { defaultTheme } from './default'
-import { blueTheme } from './blue'
+import { darkTheme } from './dark'
 
 export * from './default'
-export * from './blue'
+export * from './dark'
 
-type ThemeNames = 'default' | 'blue'
+type ThemeNames = keyof typeof themes
 
 const themes = {
   default: defaultTheme,
-  blue: blueTheme,
+  dark: darkTheme,
 }
 
 export let currentTheme: ThemeNames = 'default'
