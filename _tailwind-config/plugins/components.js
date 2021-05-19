@@ -2,13 +2,9 @@
 
 const plugin = require('tailwindcss/plugin')
 
-module.exports = {
-  addComponents: () => {
-    // @ts-ignore
-    return plugin(({ addComponents, theme }) => {
-      const components = {}
+// @ts-ignore
+module.exports = plugin(({ addComponents, theme }) => {
+  const components = {}
 
-      addComponents(components)
-    })
-  },
-}
+  addComponents(components)
+})

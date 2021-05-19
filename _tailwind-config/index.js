@@ -1,13 +1,11 @@
-const { addBase, addComponents, addUtilities } = require('./plugins')
-
 module.exports = {
   mode: 'jit',
   purge: ['./src/**/*.{js,jsx,ts,tsx}', './index.html'],
   darkMode: false,
   plugins: [
-    addBase(),
-    addUtilities(),
-    addComponents(),
+    require('./plugins/base'),
+    require('./plugins/components'),
+    require('./plugins/utilities'),
     require('@tailwindcss/line-clamp'),
     require('@tailwindcss/aspect-ratio'),
   ],

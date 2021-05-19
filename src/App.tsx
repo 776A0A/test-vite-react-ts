@@ -17,7 +17,7 @@ function App() {
 
   return (
     <div
-      className={`${classes.App} transition-colors theme-text-color theme-bg-color transition-duration-300`}
+      className={`${classes.App} container transition-colors theme-text-color theme-bg-color transition-duration-300`}
       data-name='xxx'
     >
       <button onClick={onThemeChange}>更换主题</button>

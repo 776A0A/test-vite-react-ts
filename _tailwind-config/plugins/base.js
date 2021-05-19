@@ -2,13 +2,9 @@
 
 const plugin = require('tailwindcss/plugin')
 
-module.exports = {
-  addBase: () => {
-    // @ts-ignore
-    return plugin(({ addBase, theme }) => {
-      const base = {}
+// @ts-ignore
+module.exports = plugin(({ addBase, theme }) => {
+  const base = {}
 
-      addBase(base)
-    })
-  },
-}
+  addBase(base)
+})
