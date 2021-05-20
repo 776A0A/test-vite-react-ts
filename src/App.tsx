@@ -4,17 +4,41 @@ import { About, Home, Users } from 'views'
 import { Topics } from 'views/topics'
 import { AuthExample } from 'views/auth'
 import { ModalGallery } from 'views/modal-gallery'
-import { MouseEventHandler } from 'react'
+import { MouseEventHandler, useEffect } from 'react'
 import { setTheme, currentTheme } from 'styles/themes'
+import { useQuery } from 'react-query'
 
 function App() {
-  setTheme('default', true)
-
-  console.log(import.meta.env.VITE_APP_TITLE)
-
   const onThemeChange: MouseEventHandler = () => {
     if (currentTheme === 'default') setTheme('dark')
     else setTheme('default')
+  }
+
+  useEffect(() => {
+    setTheme('default', true)
+  }, [])
+
+  const { isLoading, error, data } = useQuery('repoData', () => {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve(
+          fetch(
+            'https://api.github.com/repos/tannerlinsley/react-query'
+          ).then((res) => res.json())
+        )
+      }, 3000)
+    })
+  })
+
+  if (isLoading) {
+    return (
+      <div className='animate-bounce flex justify-center items-center h-screen'>
+        Loading
+      </div>
+    )
+  }
+  if (error) {
+    return <div className='animate-ping'>Error:{error}</div>
   }
 
   return (
@@ -83,5 +107,7 @@ function App() {
     </div>
   )
 }
+
+App.whyDidYouRender = true
 
 export default App
