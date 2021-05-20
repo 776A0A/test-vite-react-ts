@@ -8,5 +8,5 @@ export default defineConfig({
   esbuild: {
     jsxInject: `import React from 'react'`,
   },
-  base: './',
+  base: process.env.NODE_ENV === 'development' ? '/' : './',
 })
