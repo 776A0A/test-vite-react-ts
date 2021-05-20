@@ -19,18 +19,24 @@ function App() {
 
   return (
     <div
-      className={`${classes.App} container transition-colors theme-text-color theme-bg-color transition-duration-300 bg-logo`}
+      className={`${classes.App} container transition-colors theme-text-color theme-bg-color duration-300 bg-logo`}
       data-name='xxx'
     >
-      <button onClick={onThemeChange}>更换主题</button>
-      <div className='flex space-x-2'>
+      <button onClick={onThemeChange} className='animate-bounce'>
+        更换主题
+      </button>
+      <div className='flex space-x-2 justify-center animate-pulse transition-transform transform hover:skew-y-12'>
         <span className='block w-16 h-16 bg-blue-200'></span>
         <span className='block w-16 h-16 bg-blue-200'></span>
         <span className='block w-16 h-16 bg-blue-200'></span>
         <span className='block w-16 h-16 bg-blue-200'></span>
-        <span className='block w-16 h-16 bg-blue-200'></span>
+        <span className='block w-16 h-16 bg-blue-200 hover:ring-4 hover:ring-offset-4 hover:ring-inset transition-shadow'></span>
       </div>
-      <div className={classes['App-logo']}>logo</div>
+      <div className={`${classes['App-logo']} flex`}>
+        <p className='flex-grow bg-gradient-to-r from-red-500 via-yellow-700 transform hover:skew-y-12 transition-transform'>
+          logo
+        </p>
+      </div>
       <div className={`aspect-w-9 aspect-h-9`}>
         <p>
           文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章

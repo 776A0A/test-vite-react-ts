@@ -11,9 +11,6 @@ module.exports = plugin(({ addUtilities }) => {
     '.theme-bg-color': {
       'background-color': 'var(--theme-bg-color)',
     },
-    '.transition-duration-300': {
-      'transition-duration': '300ms',
-    },
   }
 
   addUtilities(utilities)

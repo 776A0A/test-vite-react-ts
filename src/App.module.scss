@@ -10,11 +10,11 @@ $x: 1px solid red;
   @apply bg-red-200 text-white opacity-50 text-base;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+// @media (prefers-reduced-motion: no-preference) {
+//   .App-logo {
+//     animation: App-logo-spin infinite 20s linear;
+//   }
+// }
 
 .App-header {
   background-color: #282c34;
