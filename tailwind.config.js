@@ -9,4 +9,11 @@ module.exports = {
     require('@tailwindcss/line-clamp'),
     require('@tailwindcss/aspect-ratio'),
   ],
+  theme: {
+    extend: {
+      backgroundImage: (theme) => ({
+        logo: "url('/src/assets/logo.svg')",
+      }),
+    },
+  },
 }

@@ -17,10 +17,17 @@ function App() {
 
   return (
     <div
-      className={`${classes.App} container transition-colors theme-text-color theme-bg-color transition-duration-300`}
+      className={`${classes.App} container transition-colors theme-text-color theme-bg-color transition-duration-300 bg-logo`}
       data-name='xxx'
     >
       <button onClick={onThemeChange}>更换主题</button>
+      <div className='flex space-x-2'>
+        <span className='block w-16 h-16 bg-blue-200'></span>
+        <span className='block w-16 h-16 bg-blue-200'></span>
+        <span className='block w-16 h-16 bg-blue-200'></span>
+        <span className='block w-16 h-16 bg-blue-200'></span>
+        <span className='block w-16 h-16 bg-blue-200'></span>
+      </div>
       <div className={classes['App-logo']}>logo</div>
       <div className={`aspect-w-9 aspect-h-9`}>
         <p>
