@@ -10,6 +10,8 @@ import { setTheme, currentTheme } from 'styles/themes'
 function App() {
   setTheme('default', true)
 
+  console.log(import.meta.env.VITE_APP_TITLE)
+
   const onThemeChange: MouseEventHandler = () => {
     if (currentTheme === 'default') setTheme('dark')
     else setTheme('default')
